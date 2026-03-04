@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sababa × AYMSKUK — Partnership Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --off-white: #f2efe8;
+    --cream: #e8e2d5;
+    --sand: #c9b99a;
+    --burnt: #b5571e;
+    --rust: #d4622a;
+    --charcoal: #2a2a2a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--off-white);
+    color: var(--black);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ---- COVER ---- */
+  .cover {
+    min-height: 100vh;
+    background: var(--black);
+    color: var(--off-white);
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181,87,30,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover::after {
+    content: 'SABABA';
+    position: absolute;
+    bottom: -40px; right: -20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 280px;
+    color: rgba(242,239,232,0.04);
+    letter-spacing: -5px;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .cover-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--sand);
+    text-transform: uppercase;
+    border: 1px solid rgba(201,185,154,0.3);
+    display: inline-block;
+    padding: 6px 14px;
+    width: fit-content;
+    margin-bottom: 60px;
+  }
+
+  .cover-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 10vw, 130px);
+    line-height: 0.92;
+    letter-spacing: 2px;
+    max-width: 800px;
+  }
+
+  .cover-headline em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.85em;
+    color: var(--rust);
+    display: block;
+  }
+
+  .cover-sub {
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--sand);
+    letter-spacing: 0.05em;
+    max-width: 480px;
+  }
+
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 40px;
+    border-top: 1px solid rgba(201,185,154,0.2);
+    font-size: 11px;
+    color: var(--sand);
+    letter-spacing: 0.1em;
+  }
+
+  /* ---- SECTIONS ---- */
+  section {
+    padding: 80px 60px;
+    border-bottom: 1px solid var(--cream);
+    position: relative;
+  }
+
+  .section-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 120px;
+    color: var(--cream);
+    position: absolute;
+    top: 20px; right: 60px;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 32px;
+    max-width: 700px;
+  }
+
+  p {
+    max-width: 620px;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  /* ---- WHY THIS WORKS ---- */
+  .alignment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 40px;
+  }
+
+  .align-cell {
+    background: var(--black);
+    color: var(--off-white);
+    padding: 32px;
+  }
+
+  .align-cell:nth-child(even) {
+    background: var(--charcoal);
+  }
+
+  .align-cell .brand-tag {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+
+  .align-cell h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+
+  .align-cell p {
+    color: var(--sand);
+    font-size: 12px;
+    max-width: 100%;
+  }
+
+  /* ---- TIERS ---- */
+  .tiers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    margin-top: 40px;
+  }
+
+  .tier {
+    border: 1px solid var(--cream);
+    padding: 36px 28px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+
+  .tier.featured {
+    background: var(--black);
+    color: var(--off-white);
+    border-color: var(--black);
+  }
+
+  .tier-badge {
+    position: absolute;
+    top: -12px; left: 28px;
+    background: var(--rust);
+    color: white;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+  }
+
+  .tier-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .tier.featured .tier-name { color: var(--off-white); }
+
+  .tier-price {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--rust);
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--cream);
+    text-transform: uppercase;
+  }
+
+  .tier.featured .tier-price { border-color: rgba(242,239,232,0.15); }
+
+  .tier-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--charcoal);
+    align-items: flex-start;
+  }
+
+  .tier.featured .tier-item { color: var(--sand); }
+
+  .tier-item::before {
+    content: '→';
+    color: var(--rust);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .tier-note {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cream);
+    font-size: 11px;
+    color: var(--sand);
+    font-style: italic;
+  }
+
+  .tier.featured .tier-note { border-color: rgba(242,239,232,0.15); }
+
+  /* ---- DELIVERABLES TABLE ---- */
+  .deliverables-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    font-size: 12px;
+  }
+
+  .deliverables-table th {
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    padding: 12px 16px;
+    border-bottom: 2px solid var(--black);
+  }
+
+  .deliverables-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--cream);
+    vertical-align: top;
+    color: var(--charcoal);
+  }
+
+  .deliverables-table tr:last-child td { border-bottom: none; }
+
+  .deliverables-table tr:hover td { background: var(--cream); }
+
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 4px;
+  }
+  .dot.yes { background: #4a7c59; }
+  .dot.no { background: #c9b99a; }
+  .dot.extra { background: var(--rust); }
+
+  /* ---- TIMELINE ---- */
+  .timeline {
+    margin-top: 40px;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 100px;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--cream);
+  }
+
+  .t-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 40px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--cream);
+  }
+
+  .t-month {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--rust);
+    padding-right: 20px;
+    text-align: right;
+    line-height: 1.1;
+    position: relative;
+  }
+
+  .t-month::after {
+    content: '';
+    position: absolute;
+    right: -5px; top: 8px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--rust);
+  }
+
+  .t-content h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  .t-content p {
+    font-size: 12px;
+    color: var(--charcoal);
+    margin: 0;
+    max-width: 500px;
+  }
+
+  .t-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .t-tag {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--cream);
+    padding: 4px 10px;
+    color: var(--charcoal);
+  }
+
+  /* ---- VALUE SECTION ---- */
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 40px;
+  }
+
+  .value-card {
+    background: var(--cream);
+    padding: 32px 24px;
+  }
+
+  .value-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    color: var(--rust);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .value-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin-bottom: 10px;
+  }
+
+  .value-desc {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* ---- CLOSING ---- */
+  .closing {
+    background: var(--black);
+    color: var(--off-white);
+    padding: 80px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .closing::after {
+    content: '×';
+    position: absolute;
+    bottom: -60px; right: 40px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 300px;
+    color: rgba(255,255,255,0.03);
+    user-select: none;
+  }
+
+  .closing h2 {
+    color: var(--off-white);
+  }
+
+  .closing p {
+    color: var(--sand);
+    max-width: 560px;
+  }
+
+  .cta-box {
+    margin-top: 48px;
+    border: 1px solid rgba(201,185,154,0.3);
+    padding: 32px;
+    display: inline-block;
+    max-width: 500px;
+  }
+
+  .cta-box .label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+
+  .cta-box p {
+    font-size: 13px;
+    margin: 0;
+    color: var(--off-white);
+  }
+
+  /* ---- UTILITIES ---- */
+  .highlight { color: var(--rust); }
+  .mono-sm { font-size: 11px; letter-spacing: 0.05em; color: #888; }
+
+  @media (max-width: 768px) {
+    .cover, section { padding: 40px 24px; }
+    .tiers, .alignment-grid, .value-grid { grid-template-columns: 1fr; }
+    .cover-headline { font-size: 52px; }
+    .section-num { font-size: 80px; right: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div>
+    <div class="cover-tag">Partnership Proposal — 3 Month Collaboration</div>
+    <h1 class="cover-headline">
+      Two Brands,
+      <em>One Conversation</em>
+      Worth Having
+    </h1>
+    <p class="cover-sub">
+      A cultural partnership between Sababa and AYMSKUK — built around community, craft, and the kind of credibility money can't buy but collaboration can.
+    </p>
+  </div>
+  <div class="cover-footer">
+    <span>SABABA COMMUNITY BRAND</span>
+    <span>CONFIDENTIAL — 2025</span>
+    <span>3-MONTH PROPOSAL</span>
+  </div>
+</div>
+
+<!-- SECTION 1 — WHY THIS ALIGNMENT -->
+<section>
+  <div class="section-num">01</div>
+  <div class="section-label">Strategic Alignment</div>
+  <h2>Why These Two Brands Make Sense</h2>
+  <p>
+    AYMSKUK celebrates failure, process, and the imperfect fingerprint that makes work real. Sababa is a community built on authentic expression and cultural conversation. We're not talking about two brands doing a logo swap — we're talking about a shared worldview finding a louder voice.
+  </p>
+  <p>
+    This is where credibility compounds. When two authentic brands move together, the culture notices.
+  </p>
+
+  <div class="alignment-grid">
+    <div class="align-cell">
+      <div class="brand-tag">AYMSKUK</div>
+      <h3>Process as Identity</h3>
+      <p>You've built something rare — a brand where the making matters as much as the made. That's a cultural story waiting to be told wider.</p>
+    </div>
+    <div class="align-cell">
+      <div class="brand-tag">Sababa</div>
+      <h3>Community as Amplifier</h3>
+      <p>Our audience doesn't just consume — they discuss, share, and adopt. They are tastemakers in the spaces AYMSKUK wants to occupy.</p>
+    </div>
+    <div class="align-cell">
+      <div class="brand-tag">Shared Goal</div>
+      <h3>Cultural Positioning</h3>
+      <p>Brand awareness through credibility, not noise. We grow together by being genuinely interesting to the right people.</p>
+    </div>
+    <div class="align-cell">
+      <div class="brand-tag">The Opportunity</div>
+      <h3>A Growing Discussion</h3>
+      <p>Your own success metric — growing discussion and cultural influence — is exactly what Sababa's community infrastructure is built to produce.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 — WHAT WE OFFER -->
+<section>
+  <div class="section-num">02</div>
+  <div class="section-label">Partnership Tiers</div>
+  <h2>Three Ways to Work Together</h2>
+  <p>
+    Based on your goals — brand credibility, cultural positioning, and growing influence — here are three tiers structured around what you're willing to invest and what you'll get back.
+  </p>
+  <p class="mono-sm">All tiers run for 3 months. Content is created for Sababa's platform with full tagging and credits to AYMSKUK.</p>
+
+  <div class="tiers">
+    <!-- TIER 1 -->
+    <div class="tier">
+      <div class="tier-name">Intro</div>
+      <div class="tier-price">£250 + Product</div>
+      <div class="tier-item">2 dedicated feature posts on Sababa's Instagram</div>
+      <div class="tier-item">1x 1-of-1 garment spotlight (Reels or Carousel)</div>
+      <div class="tier-item">Story features across the 3 months (3 stories total)</div>
+      <div class="tier-item">Brand bio + link in Sababa's profile for 4 weeks</div>
+      <div class="tier-item">Basic community engagement (comments, DMs directed)</div>
+      <div class="tier-note">Best for: testing the audience fit. Minimal investment, real exposure.</div>
+    </div>
+
+    <!-- TIER 2 — FEATURED -->
+    <div class="tier featured">
+      <div class="tier-badge">Recommended</div>
+      <div class="tier-name">Build</div>
+      <div class="tier-price">£500 + Product</div>
+      <div class="tier-item">4 dedicated posts (mix of Reels, Carousels, single imagery)</div>
+      <div class="tier-item">2x 1-of-1 garment release features — styled and shot with Sababa's aesthetic</div>
+      <div class="tier-item">1 co-created exclusive piece of content per month</div>
+      <div class="tier-item">Monthly community highlight featuring AYMSKUK story / process</div>
+      <div class="tier-item">Ongoing story coverage tied to your drops and events</div>
+      <div class="tier-item">Cross-audience engagement campaign (Sababa audience directed to your page)</div>
+      <div class="tier-note">Best for: real cultural positioning over 3 months. This is where the narrative builds.</div>
+    </div>
+
+    <!-- TIER 3 -->
+    <div class="tier">
+      <div class="tier-name">Full</div>
+      <div class="tier-price">£850 + Product</div>
+      <div class="tier-item">Everything in Build tier</div>
+      <div class="tier-item">1 exclusive co-branded content drop (content owned by both brands)</div>
+      <div class="tier-item">Dedicated "process series" — documenting AYMSKUK's ethos through Sababa's lens</div>
+      <div class="tier-item">6 posts across the quarter (highest frequency)</div>
+      <div class="tier-item">Priority placement in Sababa community activations and events</div>
+      <div class="tier-note">Best for: maximum brand credibility and a proper cultural conversation started.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 — DELIVERABLES -->
+<section>
+  <div class="section-num">03</div>
+  <div class="section-label">What You Get</div>
+  <h2>Deliverables, Defined</h2>
+  <p>Here's exactly what each piece of content looks like — so there's no guesswork on what your budget is actually buying.</p>
+
+  <table class="deliverables-table">
+    <thead>
+      <tr>
+        <th>Content Type</th>
+        <th>Description</th>
+        <th>Intro</th>
+        <th>Build</th>
+        <th>Full</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Garment Spotlight Reel</strong></td>
+        <td>Short-form video feature of a 1-of-1 piece — styled within Sababa's visual world, credited to AYMSKUK</td>
+        <td><span class="dot yes"></span>1x</td>
+        <td><span class="dot yes"></span>2x</td>
+        <td><span class="dot yes"></span>3x</td>
+      </tr>
+      <tr>
+        <td><strong>Editorial Carousel</strong></td>
+        <td>Multi-image post telling the story of a piece, a drop, or a concept from AYMSKUK</td>
+        <td><span class="dot no"></span>—</td>
+        <td><span class="dot yes"></span>2x</td>
+        <td><span class="dot yes"></span>3x</td>
+      </tr>
+      <tr>
+        <td><strong>Story Coverage</strong></td>
+        <td>Instagram Stories — polls, swipe-ups, shoutouts and brand feature moments</td>
+        <td><span class="dot yes"></span>3x</td>
+        <td><span class="dot yes"></span>6x</td>
+        <td><span class="dot yes"></span>9x</td>
+      </tr>
+      <tr>
+        <td><strong>Community Highlight</strong></td>
+        <td>Post or Reel positioning AYMSKUK within a broader cultural conversation — connecting your ethos to Sababa's community values</td>
+        <td><span class="dot no"></span>—</td>
+        <td><span class="dot yes"></span>1x/month</td>
+        <td><span class="dot yes"></span>1x/month</td>
+      </tr>
+      <tr>
+        <td><strong>Co-Created Exclusive</strong></td>
+        <td>Content born from both brands — a process video, a discussion piece, a behind-the-scenes. This is the content that gets shared.</td>
+        <td><span class="dot no"></span>—</td>
+        <td><span class="dot yes"></span>1x</td>
+        <td><span class="dot extra"></span>3x</td>
+      </tr>
+      <tr>
+        <td><strong>Process Series</strong></td>
+        <td>A short documentary-style content series around AYMSKUK's "failure and process" ethos — told through Sababa's voice</td>
+        <td><span class="dot no"></span>—</td>
+        <td><span class="dot no"></span>—</td>
+        <td><span class="dot extra"></span>Included</td>
+      </tr>
+      <tr>
+        <td><strong>Instagram Live Sessions with AYMSKUK</strong></td>
+        <td>Joint Instagram Live hosted across Sababa's platform — driving real-time community engagement, brand conversation and direct audience exposure for AYMSKUK</td>
+        <td><span class="dot no"></span>—</td>
+        <td><span class="dot yes"></span>1x</td>
+        <td><span class="dot extra"></span>2x</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- SECTION 4 — TIMELINE -->
+<section>
+  <div class="section-num">04</div>
+  <div class="section-label">3-Month Rollout</div>
+  <h2>How the Quarter Unfolds</h2>
+  <p>This isn't three months of posts. It's a narrative arc — building from introduction, through immersion, to cultural authority.</p>
+
+  <div class="timeline">
+    <div class="t-row">
+      <div class="t-month">Month<br>One</div>
+      <div class="t-content">
+        <h3>Introduce & Frame</h3>
+        <p>First touchpoints. We introduce AYMSKUK to the Sababa community with intention — not a one-off tag, but a framed introduction that sets the tone. Garment spotlight, brand story content, initial story coverage.</p>
+        <div class="t-tags">
+          <span class="t-tag">Brand Intro Post</span>
+          <span class="t-tag">First Garment Feature</span>
+          <span class="t-tag">Story Series</span>
+        </div>
+      </div>
+    </div>
+    <div class="t-row">
+      <div class="t-month">Month<br>Two</div>
+      <div class="t-content">
+        <h3>Deepen & Co-Create</h3>
+        <p>The community now knows you. We go deeper — community highlight content, co-created pieces, and connecting your "failure and process" ethos to the cultural conversations Sababa is already in.</p>
+        <div class="t-tags">
+          <span class="t-tag">Community Highlight</span>
+          <span class="t-tag">Co-Created Content</span>
+          <span class="t-tag">Drop Coverage</span>
+          <span class="t-tag">Process Angle</span>
+        </div>
+      </div>
+    </div>
+    <div class="t-row">
+      <div class="t-month">Month<br>Three</div>
+      <div class="t-content">
+        <h3>Cement & Convert</h3>
+        <p>Final push — highest-impact content, strongest call to follow AYMSKUK. We close the quarter with content that drives real audience movement and leaves AYMSKUK with a defined presence in this cultural space.</p>
+        <div class="t-tags">
+          <span class="t-tag">Highest-Reach Content</span>
+          <span class="t-tag">Audience Drive</span>
+          <span class="t-tag">Quarter Recap</span>
+          <span class="t-tag">Forward Planning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 — THE VALUE -->
+<section>
+  <div class="section-num">05</div>
+  <div class="section-label">What This Is Worth</div>
+  <h2>The Real Value of Community Reach</h2>
+  <p>Brand awareness through paid ads gets you impressions. Brand awareness through authentic community content gets you credibility. Here's what you're actually buying.</p>
+
+  <div class="value-grid">
+    <div class="value-card">
+      <div class="value-num">Trust</div>
+      <div class="value-label">Community Endorsement</div>
+      <p class="value-desc">Our audience follows Sababa because they trust the curation. When we put AYMSKUK in front of them, that trust transfers. You can't buy that with ads.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-num">Context</div>
+      <div class="value-label">Cultural Positioning</div>
+      <p class="value-desc">Your own goal is cultural credibility. Sababa puts AYMSKUK in conversation with the right aesthetic and creative community — not a random audience, but your people.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-num">Story</div>
+      <div class="value-label">Process-First Narrative</div>
+      <p class="value-desc">AYMSKUK's ethos — process, failure, the fingerprint — is a story that deserves to be told. Sababa is a platform where that story resonates and spreads.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<div class="closing">
+  <div class="section-label" style="color: var(--rust);">Next Steps</div>
+  <h2>Let's Build Something Real</h2>
+  <p>
+    You said you're not sure what this collaboration looks like in terms of deliverables. Now you know. The question is what level of investment makes sense for where AYMSKUK is right now.
+  </p>
+  <p>
+    The <span class="highlight">Build tier at £500</span> is where the real work happens — enough deliverables to build a genuine narrative over 3 months, structured around your 1-of-1 releases and community moments, with co-created content that can live on both platforms.
+  </p>
+  <p>
+    Happy to talk through any of this, adjust deliverables based on your upcoming releases, or explore a hybrid of the above.
+  </p>
+
+  <div class="cta-box">
+    <div class="label">To move forward</div>
+    <p>Reply with which tier feels right, and we'll put together a simple one-page agreement and content calendar for Month One. That's all it takes to start.</p>
+  </div>
+</div>
+
+</body>
+</html>
